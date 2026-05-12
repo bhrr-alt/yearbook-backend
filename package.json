@@ -1,21 +1,16 @@
 {
-"name": "yearbook-backend",
+  "name": "yearbook-backend",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo\"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bhrr-alt/yearbook-backend.git"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/bhrr-alt/yearbook-backend/issues"
-  },
-  "homepage": "https://github.com/bhrr-alt/yearbook-backend#readme"
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
