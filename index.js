@@ -1,15 +1,17 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';                              // novo import
 import logger from './middlewares/logger.js';
-import tratarErro from './middlewares/erro.js';     // novo import
+import tratarErro from './middlewares/erro.js';
 import alunosRouter from './routes/alunos.js';
 import mensagensRouter from './routes/mensagens.js';
 
 const app = express();
-const PORT = process.env.PORT || 3000;  // lê do .env, com fallback para 3000
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(logger);
+app.use(cors());            // 1º — libera CORS para qualquer origem
+app.use(express.json());    // 2º — parseia body JSON
+app.use(logger);            // 3º — registra log
 
 app.get('/', (req, res) => {
   res.json({ mensagem: 'Yearbook API está no ar! 🎓' });
